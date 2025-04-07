@@ -24,8 +24,8 @@ class BookingFactory extends Factory
         return [
             'user_id' => $tenant->id,
             'property_id' => $property->id,
-            'start_date' => $this->faker->dateTimeBetween('now', '+1 year'),
-            'end_date' => $this->faker->dateTimeBetween('+1 day', '+2 years'),
+            'start_date' => $startDate = $this->faker->dateTimeBetween('now', '+1 year'),
+            'end_date' => $this->faker->dateTimeBetween($startDate, '+2 years'),
         ];
     }
 }
